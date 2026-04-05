@@ -1,0 +1,263 @@
+:root {
+  --bg: #0b1020;
+  --panel: #11182c;
+  --panel-soft: #18213a;
+  --border: rgba(255, 255, 255, 0.08);
+  --text: #eef2ff;
+  --muted: #9aa6c7;
+  --accent: #84cc16;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --safe: #22c55e;
+  --shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(180deg, #09111f 0%, #0f172a 100%);
+  color: var(--text);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+}
+
+.pageShell {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 32px 20px 60px;
+}
+
+.card {
+  background: rgba(17, 24, 44, 0.92);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 24px;
+  padding: 28px;
+  margin-bottom: 24px;
+}
+
+.eyebrow {
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 12px;
+  font-weight: 700;
+  margin: 0 0 12px;
+}
+
+h1, h2, h3, p {
+  margin-top: 0;
+}
+
+h1 {
+  font-size: clamp(2rem, 3.5vw, 3.4rem);
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+h2 {
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+}
+
+.lead {
+  color: var(--muted);
+  max-width: 720px;
+  line-height: 1.6;
+}
+
+.heroStats {
+  display: grid;
+  gap: 14px;
+}
+
+.heroStats > div,
+.summaryGrid > div,
+.bigMetric,
+.decisionBox {
+  background: var(--panel-soft);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 18px;
+}
+
+.heroStats span,
+.summaryGrid span,
+.bigMetric span,
+.decisionBox span,
+.fieldLabel,
+.fieldHelp,
+.riskMeta span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.heroStats strong,
+.summaryGrid strong,
+.bigMetric strong,
+.decisionBox strong,
+.riskMeta strong {
+  display: block;
+  margin-top: 8px;
+  font-size: 1.35rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.formCard,
+.resultsCard {
+  padding: 24px;
+}
+
+.grid2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+input,
+select {
+  width: 100%;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: #0c1428;
+  color: var(--text);
+  padding: 14px 16px;
+  font-size: 15px;
+  outline: none;
+}
+
+input:focus,
+select:focus {
+  border-color: rgba(132, 204, 22, 0.55);
+  box-shadow: 0 0 0 4px rgba(132, 204, 22, 0.12);
+}
+
+.fieldHelp {
+  font-size: 0.82rem;
+}
+
+.resultsColumn {
+  display: grid;
+  gap: 24px;
+}
+
+.summaryGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.bigMetric strong {
+  font-size: 2rem;
+}
+
+.riskList {
+  display: grid;
+  gap: 14px;
+}
+
+.riskRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px;
+  border: 1px solid var(--border);
+  background: var(--panel-soft);
+  border-radius: 18px;
+}
+
+.riskRow p,
+.muted,
+.interpretation li {
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.riskMeta {
+  min-width: 130px;
+  text-align: right;
+}
+
+.interpretation {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-bottom: 16px;
+}
+
+.interpretation > div {
+  background: var(--panel-soft);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 18px;
+}
+
+.interpretation ul {
+  padding-left: 18px;
+  margin: 0;
+}
+
+.danger { color: var(--danger); }
+.warning { color: var(--warning); }
+.safe { color: var(--safe); }
+
+@media (max-width: 1024px) {
+  .hero,
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .pageShell {
+    padding: 18px 12px 40px;
+  }
+
+  .grid2,
+  .summaryGrid,
+  .interpretation {
+    grid-template-columns: 1fr;
+  }
+
+  .hero,
+  .formCard,
+  .resultsCard {
+    padding: 18px;
+  }
+
+  .riskRow {
+    flex-direction: column;
+  }
+
+  .riskMeta {
+    text-align: left;
+  }
+}
